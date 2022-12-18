@@ -20,12 +20,10 @@ export function App() {
   });
   const [filter, setFilter] = useState('');
   useEffect(() => {
-    console.log(contacts);
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
   function addContact(newContact, newPhone) {
-    console.log('add contacts function');
     if (contacts.find(cont => cont.name === newContact)) {
       alert(`${newContact} is already`);
       return;
